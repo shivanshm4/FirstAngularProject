@@ -1,0 +1,6 @@
+<p>Dashboard</p>
+<button type="button" (click)="onClickStateChange($event)" >Click to Change the state</button>
+<!--<input type="text" (input)="loadState=$event.target.value">-->
+Put your own Text to change : <input type="text" [(ngModel)]="loadState"/>
+<!-- <p>{{loadState}}</p> -->
+<p [textContent]="loadState"></p>
