@@ -306,9 +306,19 @@
     <div class="spacer"></div>
 </div>
 <hr>
-<app-user></app-user>
+<app-user [name]="rootName" (nameChanged)="rename($event)"></app-user>
 <hr>
 <app-dashboard></app-dashboard>
+<hr>
+<hr>
+<!-- <app-cart  (itemAddEvent)="updateCart($event)"></app-cart> -->
+
+ <app-cart [items]="finalItems" (itemAddEvent)="updateCart($event)"></app-cart>
+ <ul>
+  <li *ngFor="let item of finalItems">
+    {{ item }}
+  </li>
+</ul>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
