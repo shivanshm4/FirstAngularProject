@@ -1,4 +1,15 @@
 <p>Implementation of cart Component!</p>
 <p>We are accepting values and adding to an array in App Component : custom event</p>
-Item Name:<input type="text" [(ngModel)] = "newItem"/>
-<button (click)="addItem()">Add Items</button>
+Item Name:<input type="text" class="form-group" [(ngModel)] = "newItem">
+
+<button class="btn" (click)="addItem()" [ngClass]="{'btn-primary':newItem!='', 'btn-secondary':newItem==''}">
+  Add Items</button>
+  <p *ngIf="newItem==''" class="lead">Please Enter an item to Add!</p>
+  <div class="row">
+    <div class="col-xl-12">
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let item of items; let i=index"
+  [ngStyle]="{'background-color':i%2==0?'yellow':'cyan'}">{{ item }}</li>
+</ul>
+</div>
+</div>

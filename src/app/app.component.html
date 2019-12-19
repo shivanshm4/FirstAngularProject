@@ -308,17 +308,15 @@
 <hr>
 <app-user [name]="rootName" (nameChanged)="rename($event)"></app-user>
 <hr>
-<app-dashboard></app-dashboard>
+<div class="container p-3 my-3 border"><app-dashboard></app-dashboard></div>
+
 <hr>
 <hr>
 <!-- <app-cart  (itemAddEvent)="updateCart($event)"></app-cart> -->
 
  <app-cart [items]="finalItems" (itemAddEvent)="updateCart($event)"></app-cart>
- <ul>
-  <li *ngFor="let item of finalItems">
-    {{ item }}
-  </li>
-</ul>
+
+<p *ngIf="finalItems.length>1">Using conditional If Statement: You have {{finalItems.length}} items in your cart!</p>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
